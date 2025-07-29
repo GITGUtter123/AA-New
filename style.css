@@ -254,7 +254,96 @@ html {
     aspect-ratio: 16/9;
     border-radius: var(--dl-layout-radius-imageradius);
 }
+/* Testimonial Section Styles */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--dl-layout-space-twounits);
+    width: 100%;
+}
 
+.testimonial-card {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    padding: var(--dl-layout-space-twounits);
+    align-items: stretch;
+    border-radius: var(--dl-layout-radius-cardradius);
+    flex-direction: column;
+    background-color: var(--dl-color-theme-secondary1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-container12,
+.testimonial-container14,
+.testimonial-container16,
+.testimonial-container18 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.testimonial-image1,
+.testimonial-image2,
+.testimonial-image3,
+.testimonial-image4 {
+    width: var(--dl-layout-size-small);
+    height: var(--dl-layout-size-small);
+    object-fit: cover;
+    border-radius: var(--dl-layout-radius-round);
+}
+
+.testimonial-text14,
+.testimonial-text17,
+.testimonial-text20,
+.testimonial-text23 {
+    color: var(--dl-color-theme-primary1);
+    font-weight: 600;
+}
+
+/* Responsive Styles */
+@media(max-width: 991px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 767px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .testimonial-container10 {
+        margin-bottom: var(--dl-layout-space-oneandhalfunits);
+    }
+}
+
+@media(max-width: 479px) {
+    .testimonial-card {
+        padding: var(--dl-layout-space-unit);
+    }
+    
+    .testimonial-image1,
+    .testimonial-image2,
+    .testimonial-image3,
+    .testimonial-image4 {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .testimonial-text11 {
+        font-size: 14px;
+    }
+}
 .thq-img-ratio-4-3 {
     width: 100%;
     object-fit: cover;
