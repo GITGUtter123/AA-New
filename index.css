@@ -2186,8 +2186,10 @@
 
 .footer-max-width {
     width: 100%;
+    max-width: var(--dl-layout-size-maxwidth);
+    margin: 0 auto; /* Add this */
+    padding: 0 var(--dl-layout-space-unit);
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -2329,12 +2331,14 @@
 }
 
 .footer-social-links {
-    gap: var(--dl-layout-space-halfunit);
     display: flex;
-    align-self: stretch;
-    align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;  /* Icons in a row */
+    justify-content: center;
+    align-items: center;
+    gap: var(--dl-layout-space-unit);
+    width: 100%;
 }
+
 
 .footer-link14 {
     gap: 12px;
