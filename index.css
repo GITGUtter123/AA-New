@@ -106,24 +106,90 @@
 /* Responsive styles */
 
 @media(max-width: 767px) {
-    .deposit {
-        padding: var(--dl-layout-space-threeunits);
+    .navbar-navbar-interactive {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
-    .deposit-container {
-        gap: var(--dl-layout-space-oneandhalfunits);
+
+    .hero-header78 {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero-content2 {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .features1-container2,
+    .features2-container2 {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Fix image container width */
+    .hero-placeholder-image10,
+    .hero-placeholder-image11,
+    .hero-placeholder-image12,
+    .hero-placeholder-image13,
+    .hero-placeholder-image14,
+    .hero-placeholder-image15,
+    .hero-placeholder-image16,
+    .hero-placeholder-image17,
+    .hero-placeholder-image18,
+    .hero-placeholder-image19,
+    .hero-placeholder-image20,
+    .hero-placeholder-image21,
+    .hero-placeholder-image22,
+    .hero-placeholder-image23,
+    .hero-placeholder-image24,
+    .hero-placeholder-image25,
+    .hero-placeholder-image26,
+    .hero-placeholder-image27,
+    .hero-placeholder-image28,
+    .hero-placeholder-image29,
+    .hero-placeholder-image30,
+    .hero-placeholder-image31,
+    .hero-placeholder-image32,
+    .hero-placeholder-image33 {
+        width: 280px;
+        height: 280px;
     }
 }
 
 @media(max-width: 479px) {
-    .deposit {
-        padding: var(--dl-layout-space-oneandhalfunits);
+    .hero-actions {
+        width: 100%;
+        overflow-x: hidden;
     }
-    .section-title {
-        font-size: 26px;
-        margin-bottom: var(--dl-layout-space-unit);
-    }
-    .deposit-info p {
-        font-size: 16px;
+
+    .hero-placeholder-image10,
+    .hero-placeholder-image11,
+    .hero-placeholder-image12,
+    .hero-placeholder-image13,
+    .hero-placeholder-image14,
+    .hero-placeholder-image15,
+    .hero-placeholder-image16,
+    .hero-placeholder-image17,
+    .hero-placeholder-image18,
+    .hero-placeholder-image19,
+    .hero-placeholder-image20,
+    .hero-placeholder-image21,
+    .hero-placeholder-image22,
+    .hero-placeholder-image23,
+    .hero-placeholder-image24,
+    .hero-placeholder-image25,
+    .hero-placeholder-image26,
+    .hero-placeholder-image27,
+    .hero-placeholder-image28,
+    .hero-placeholder-image29,
+    .hero-placeholder-image30,
+    .hero-placeholder-image31,
+    .hero-placeholder-image32,
+    .hero-placeholder-image33 {
+        width: 240px;
+        height: 240px;
     }
 }
 
