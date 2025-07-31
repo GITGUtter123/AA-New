@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
-
+    <!-- GSAP core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-sF4a8m/CjYm8vgrvL4fYb7gGKYr1ZhfUWEq9Jc+El/5dl8IlpR0nUJhL3R+XNGFJ2LrdJj8tYUZUe3jIwpz2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style data-tag="reset-style-sheet">
         html {
             line-height: 1.15;
@@ -168,6 +169,15 @@
 </head>
 
 <body>
+    <!-- Loading Animation -->
+<div class="loader-overlay">
+    <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+    </div>
+    <img src="photos/logo.webp" alt="AA Automods Logo" class="loader-logo">
+</div>
     <link rel="stylesheet" href="./style.css" />
     <div>
         <link href="./index.css" rel="stylesheet" />
@@ -1092,7 +1102,7 @@ We specialize in cosmetic upgrades that turn heads—LED undelights, star‑head
                                         </p>
                                     </div>
                                     <span class="contact-email thq-body-small">
-                                                 <a href="mailto:anthony.aalighting@gmail.com" class="thq-body-small">
+                                                 <a href="mailto:anthony.aalighting@gmail.com" class="thq-body-small blue">
                                 <span>anthony.aalighting@gmail.com</span>
                             </a>
                                     </span>
@@ -1115,7 +1125,7 @@ We specialize in cosmetic upgrades that turn heads—LED undelights, star‑head
                                         </p>
                                     </div>
                                     <span class="contact-phone thq-body-small">
-                                                  <a href="tel:+1-647-677-7287" class="thq-body-small">
+                                                  <a href="tel:+1-647-677-7287" class="thq-body-small blue">
                                 <span>+1-647-677-7287</span>
                             </a>
                                     </span>
@@ -1134,7 +1144,7 @@ We specialize in cosmetic upgrades that turn heads—LED undelights, star‑head
                                             <span>Thank you for choosing AA Automods!</span>
                                         </p>
                                     </div>
-                                    <span class="contact-address thq-body-small">
+                                    <span class="contact-address thq-body-small blue">
                       <span>190 Creditstone Rd Units 2&3
 Vaughan, ON L4K 1R9
 Canada</span>
@@ -1209,7 +1219,7 @@ Canada</span>
                         </strong>
                         <div class="footer-map">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.984084579518!2d-79.5159829241363!3d43.79630203896866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2f5f9f1f1f1f%3A0x9e9e9e9e9e9e9e9e!2s190%20Creditstone%20Rd%20Units%202%263%2C%20Vaughan%2C%20ON%20L4K%201R9%2C%20Canada!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.984084579518!2d-79.5159829241363!3d43.79630203896866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2f5f9f1f1f1f%3A0x9e9e9e9e9e9e9e!2s190%20Creditstone%20Rd%20Units%202%263%2C%20Vaughan%2C%20ON%20L4K%201R9%2C%20Canada!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
                                 width="100%" 
                                 height="160" 
                                 style="border:0;" 
@@ -1264,6 +1274,29 @@ Canada</span>
         </div>
     </div>
     <script data-section-id="navbar" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+    <script>
+        // Get the burger menu and mobile menu elements
+        const burgerMenu = document.querySelector('[data-thq="thq-burger-menu"]');
+        const mobileMenu = document.querySelector('[data-thq="thq-mobile-menu"]');
+        const closeMenu = document.querySelector('[data-thq="thq-close-menu"]');
+
+        // Toggle menu when burger is clicked
+        burgerMenu.addEventListener('click', () => {
+            mobileMenu.style.display = 'flex';
+            // Trigger reflow
+            mobileMenu.offsetHeight;
+            mobileMenu.classList.add('show');
+        });
+
+        // Close menu when X is clicked
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('show');
+            // Wait for animation to finish before hiding
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+            }, 300);
+        });
+    </script>
     <script>document.addEventListener('DOMContentLoaded', function() {
     const pricingButtons = document.querySelectorAll('.see-pricing');
     const closeButtons = document.querySelectorAll('.close-modal');
@@ -1539,6 +1572,34 @@ function openConsultationModal() {
         document.body.style.overflow = 'hidden';
     }
 }
+</script>
+<script>
+// Loading Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const loader = document.querySelector('.loader-overlay');
+            loader.classList.add('hidden');
+            
+            // Remove loader from DOM after animation completes
+            setTimeout(function() {
+                loader.remove();
+            }, 500);
+        }, 1000); // Adjust this timeout if needed
+    });
+    
+    // Fallback in case load event doesn't fire
+    setTimeout(function() {
+        const loader = document.querySelector('.loader-overlay');
+        if (loader && !loader.classList.contains('hidden')) {
+            loader.classList.add('hidden');
+            setTimeout(function() {
+                loader.remove();
+            }, 500);
+        }
+    }, 2500); // Maximum wait time of 2.5 seconds
+});
 </script>
 </body>
 
