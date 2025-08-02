@@ -169,15 +169,6 @@
 </head>
 
 <body>
-    <!-- Loading Animation -->
-<div class="loader-overlay">
-    <div class="loader">
-        <div class="loader-circle"></div>
-        <div class="loader-circle"></div>
-        <div class="loader-circle"></div>
-    </div>
-    <img src="photos/logo.webp" alt="AA Automods Logo" class="loader-logo">
-</div>
     <link rel="stylesheet" href="./style.css" />
     <div>
         <link href="./index.css" rel="stylesheet" />
@@ -1574,33 +1565,3 @@ function openConsultationModal() {
 }
 </script>
 <script>
-// Loading Animation
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide loader when page is fully loaded
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            const loader = document.querySelector('.loader-overlay');
-            loader.classList.add('hidden');
-            
-            // Remove loader from DOM after animation completes
-            setTimeout(function() {
-                loader.remove();
-            }, 500);
-        }, 1000); // Adjust this timeout if needed
-    });
-    
-    // Fallback in case load event doesn't fire
-    setTimeout(function() {
-        const loader = document.querySelector('.loader-overlay');
-        if (loader && !loader.classList.contains('hidden')) {
-            loader.classList.add('hidden');
-            setTimeout(function() {
-                loader.remove();
-            }, 500);
-        }
-    }, 2500); // Maximum wait time of 2.5 seconds
-});
-</script>
-</body>
-
-</html>
